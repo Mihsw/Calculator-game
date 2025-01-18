@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<p class="htext1">CALCULATOR THE GAME</p>
+<div>
+
+<!-- <p class="htext a1"><a href="login.html" class="a4">Login</a></p>
+<p class="htext a2"><a href="sign.up.html" class="a4">Sign up</a></p>
+<p class="htext a3"><a href="info.html" class="a4">Info</a></p> -->
+</div>
+</header>
+
+<section class="game">
+<div class="screen">
+<p id="qsc">2+2</p>
+<p id="usc">0</p>
+</div>
+<button class="button b1" onclick="add(1)">1</button>
+<button class="button b2" onclick="add(2)">2</button>
+<button class="button b3" onclick="add(3)">3</button>
+<button class="button b4" onclick="add(4)">4</button>
+<button class="button b5" onclick="add(5)">5</button>
+<button class="button b6" onclick="add(6)">6</button>
+<button class="button b7" onclick="add(7)">7</button>
+<button class="button b8" onclick="add(8)">8</button>
+<button class="button b9" onclick="add(9)">9</button>
+<button class="button b0" onclick="add(0)">0</button>
+<button class="button bpm" onclick="m()">&plusmn;</button>
+<button class="button bdel" onclick="del()">&larr;</button>
+<button class="button bdels" onclick="del2()">&rarr;</button>
+<button class="button baleq" onclick="quess(1)">&asymp;</button>
+<button class="button beq" onclick="quess(0)">=</button>
+</section>
+
+<script>
+function add(a){
+if (num1len<10){
+num1 = num1 * 10 + a
+num1len=num1len+1
+document.getElementById("usc").innerHTML = num1
+}
+}
+function del(){
+if (num1len>0){
+num1 = Math.trunc(num1 / 10)
+num1len=num1len-1
+document.getElementById("usc").innerHTML = num1
+}
+}
+
+function del2(){
+if (num1len>0){
+let m = false
+if (num1<0){
+num1=num1*-1;
+m = true;
+}
+let i = num1
+while (i>10){
+i = i/10
+}
+i = Math.trunc(i)
+num1 -= (10**(num1len-1)) * i
+num1len-=1
+if (m===true) {
+num1 = num1*-1;
+}
+document.getElementById("usc").innerHTML = num1
+}
+}
+function play(){ //TODO: FIX/make it better
+let c = Math.floor(Math.random() * 100) + 1
+let d = Math.floor(Math.random() * 100) + 1
+let e = Math.floor(Math.random() * 4) + 1
+
+switch (e) {
+    case 1:
+        f = c+d
+        document.getElementById("qsc").innerHTML = (String(c) + "+" + String(d))
+        break;
+
+    case 2:
+        f = c-d
+        document.getElementById("qsc").innerHTML = (String(c) + "-" + String(d))
+        break;
+
+    case 3:
+        f=c*d
+        document.getElementById("qsc").innerHTML = (String(c) + "*" + String(d))
+        break;
+    
+    case 4:
+        f=c/d
+        document.getElementById("qsc").innerHTML = (String(c) + "/" + String(d))
+        break;
+
+    default:
+        break;
+}
+}
+
+function quess(d){
+let a = document.getElementById("usc").innerHTML
+let p = f
+if (d==1){
+p=Math.round(p)
+}
+if (a==p) {
+document.getElementById("usc").innerHTML = "Correct!!";
+play();
+}else{
+document.getElementById("usc").innerHTML = "Wrong";
+}
+}
+
+function m(){
+num1=num1*-1
+document.getElementById("usc").innerHTML = num1
+}
+
+var f = 0
+let num1 = 0
+let num1len = 0
+play()
+</script>
+</body> 
+</html>
