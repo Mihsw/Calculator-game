@@ -26,7 +26,6 @@ header {
 
 .a1 {
     right: 15vi;
-
 }
 
 .a2 {
@@ -96,44 +95,30 @@ border-radius: 2vi;
     transform: translateX(0.25vi);
 }
 
-.b1{
+.ba{
     left: 1vi;
+}
+
+.bb{
+    left: 7vi;
+}
+
+.bc{
+    left: 13vi;
+}
+
+.b1{
     top: 10vi;
 }
 
 .b2{
-    left: 7vi;
-    top: 10vi;
+    top: 16vi;
 }
-
 .b3{
-    left: 13vi;
-    top: 10vi;
+    top: 22vi;
 }
 
 .b4{
-    left: 1vi;
-    top: 16vi;
-}
-
-.b5{
-    left: 7vi;
-    top: 16vi;
-}
-.b6{
-    left: 13vi;
-    top: 16vi;
-}
-.b7{
-    left: 1vi;
-    top: 22vi;
-}
-.b8{
-    left: 7vi;
-    top: 22vi;
-}
-.b9{
-    left: 13vi;
     top: 22vi;
 }
 
@@ -147,7 +132,6 @@ border-radius: 2vi;
     top: 22vi;
     width: 10vi;
 }
-
 
 .baleq{
     left: 25vi;
